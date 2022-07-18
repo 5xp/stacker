@@ -2,7 +2,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const squareCountX = 7;
 const squareCountY = 12;
-const squareSize = canvas.width / squareCountX;
+let squareSize;
 const header = document.getElementById("header");
 
 let gameSpeed;
@@ -205,6 +205,11 @@ let drawGrid = () => {
 };
 
 let draw = () => {
+  // resize the canvas if the window is resized
+  canvas.height = window.innerHeight * 0.8;
+  canvas.width = (canvas.height * 7) / 12;
+  squareSize = canvas.width / squareCountX;
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBackground();
   drawSquares();
@@ -247,11 +252,10 @@ let handlePress = e => {
   } else {
     dropSquares();
   }
-}
+};
 
 window.addEventListener("keydown", handlePress);
 window.addEventListener("touchstart", handlePress);
-
 
 resetGame();
 gameLoop();
