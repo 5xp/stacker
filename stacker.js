@@ -183,7 +183,7 @@ let drawText = (text, x, y, color) => {
   ctx.shadowColor = "black";
   ctx.shadowBlur = 30;
   ctx.font =
-    "bolder 100px -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji'";
+    "bolder 4em -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji'";
   ctx.fillStyle = color;
   ctx.textAlign = "center";
   ctx.fillText(text, x, y);
