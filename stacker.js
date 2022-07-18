@@ -3,7 +3,6 @@ const ctx = canvas.getContext("2d");
 const squareCountX = 7;
 const squareCountY = 12;
 let squareSize;
-const header = document.getElementById("header");
 
 let gameSpeed;
 let gameOver;
@@ -181,10 +180,14 @@ let drawSquares = () => {
 };
 
 let drawText = (text, x, y, color) => {
-  ctx.font = "80px Impact";
+  ctx.shadowColor = "black";
+  ctx.shadowBlur = 30;
+  ctx.font =
+    "bolder 100px -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji'";
   ctx.fillStyle = color;
   ctx.textAlign = "center";
   ctx.fillText(text, x, y);
+  ctx.shadowBlur = 0;
 };
 
 let drawGameOver = () => {
@@ -223,7 +226,6 @@ let draw = () => {
 
 let resetGame = () => {
   confetti.stop();
-  header.innerText = "Stacker";
   gameOver = 0;
   gameSpeed = 11;
   squaresRemaining = 3;
