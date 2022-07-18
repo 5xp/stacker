@@ -241,16 +241,17 @@ let resetGame = () => {
   squareDirection = Math.floor(Math.random() * 2);
 };
 
-window.addEventListener("keydown", event => {
-  // listen for the spacebar
-  if (event.code === "Space") {
-    if (gameOver) {
-      resetGame();
-    } else {
-      dropSquares();
-    }
+let handlePress = e => {
+  if (gameOver) {
+    resetGame();
+  } else {
+    dropSquares();
   }
-});
+}
+
+window.addEventListener("keydown", handlePress);
+window.addEventListener("touchstart", handlePress);
+
 
 resetGame();
 gameLoop();
