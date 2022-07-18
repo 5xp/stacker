@@ -35,7 +35,6 @@ let getRandomInt = (min, max) => {
 
 let getRandomPosition = () => {
   return getRandomInt(-squaresRemaining + 1, squareCountX - 1);
-  // return Math.floor(Math.random() * squareCountX);
 };
 
 let moveLeft = () => {
